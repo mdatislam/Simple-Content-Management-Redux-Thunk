@@ -6,15 +6,18 @@ import { getAuth } from "firebase/auth";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyBMLBIvyFjtVA_PySKAbBKKjwUvSvnSXoI",
-  authDomain: "content-management-redux-thunk.firebaseapp.com",
-  projectId: "content-management-redux-thunk",
-  storageBucket: "content-management-redux-thunk.appspot.com",
-  messagingSenderId: "43962064113",
-  appId: "1:43962064113:web:92b52d990f75646ba4dd50"
+    apiKey:import.meta.env.VITE_apiKey, 
+    authDomain:import.meta.env.VITE_authDomain, 
+    projectId:import.meta.env.VITE_projectId, 
+    storageBucket:import.meta.env.VITE_storageBucket, 
+    messagingSenderId:import.meta.env.VITE_messagingSenderId, 
+    appId:import.meta.env.VITE_appId, 
 };
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const auth= getAuth(app)
 export default auth;
+
+
+
