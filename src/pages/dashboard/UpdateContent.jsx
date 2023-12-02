@@ -1,20 +1,28 @@
 import { useForm } from "react-hook-form";
 import { useDispatch, useSelector } from "react-redux";
-import { useNavigate, useParams } from "react-router-dom";
+import { useLoaderData, useNavigate, useParams } from "react-router-dom";
 import { modifiedContent } from "../../redux/thunk/modifiedContent";
 import Swal from "sweetalert2";
+//import { useEffect } from "react";
+//import { fetchContent } from "../../redux/thunk/fetchContent";
 
 
 const UpdateContent = () => {
-    const params= useParams()
-    const id=params.contentId 
-    //console.log(id);
+    // const params= useParams()
+    // const id=params.contentId 
+    // console.log(id);
+     
+    // useEffect(()=>{
+    //     dispatch( fetchContent())
+    //  },[])
+    //  const contents = useSelector(state => state.contents.contents)
+   
+    //  const targetContent = contents.find(content=>content._id===id)
+     const targetContent = useLoaderData()
+     console.log(targetContent);
+    const {name,category,price,image,_id}=targetContent
     const dispatch= useDispatch()
-    const navigate= useNavigate()
-    let targetContent=[]
-    const contents= useSelector(state=> state.contents.contents)
-     targetContent = contents.find(content=>content._id===id)
-    const {name,category,price,image}=targetContent
+     const navigate= useNavigate()
 
     const {
         register, reset,
@@ -30,7 +38,7 @@ const UpdateContent = () => {
             remark: data.remarks
         }
         console.log(newContent)
-         dispatch(modifiedContent({newContent,id}))
+         dispatch(modifiedContent({newContent,_id}))
         navigate("/Dashboard/ContentList")
         Swal.fire("Saved!", "", "success");
          reset()

@@ -1,8 +1,9 @@
 import { editContent } from "../actionCreator/actionCreator";
 
-export const modifiedContent=({newContent,id})=>{
+export const modifiedContent=({newContent,_id})=>{
     return async(dispatch)=>{
-        const res= await fetch(`http://localhost:5000/food/${id}`,{
+        console.log(_id);
+        const res= await fetch(`https://bistroserver.bloperation.com/food/${_id}`,{
             method:"PUT",
             headers:{
                 "content-type":"application/json"
@@ -12,7 +13,7 @@ export const modifiedContent=({newContent,id})=>{
         const resResult=await res.json()
         console.log(resResult);
         if(resResult.acknowledged){
-            dispatch(editContent({newContent,id}))
+            dispatch(editContent({newContent,_id}))
         }
     }
 

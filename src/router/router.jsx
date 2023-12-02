@@ -28,7 +28,7 @@ export const router = createBrowserRouter([
         {
             path:"SingleCard/:id",
             element:<SingleCardDetail/>,
-            loader:async({params})=> await fetch(`http://localhost:5000/food/${params.id}`)
+            loader:async({params})=> await fetch(`https://bistroserver.bloperation.com/food/${params.id}`)
         },
         {
             path:"About",
@@ -55,7 +55,8 @@ export const router = createBrowserRouter([
         },
         {
             path:"UpdateContent/:contentId",
-            element:<UpdateContent/>
+            element:<UpdateContent/>,
+            loader:async({params})=> await fetch(`https://bistroserver.bloperation.com/food/${params.contentId}`)
         },
     
     ]

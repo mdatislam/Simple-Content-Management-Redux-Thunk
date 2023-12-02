@@ -13,7 +13,7 @@ const Home = () => {
     useEffect(() => {
 
         dispatch(fetchContent())
-    }, [])
+    }, [dispatch])
 
     const contents = useSelector(state => state.contents.contents)
     const histories =useSelector(state=> state.contents.history)

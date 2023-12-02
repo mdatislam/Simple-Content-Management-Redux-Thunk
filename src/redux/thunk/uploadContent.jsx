@@ -2,7 +2,7 @@ import { addContent } from "../actionCreator/actionCreator"
 
 export const uploadContent=(newContent)=>{
     return async(dispatch)=>{
-        const res= await fetch("http://localhost:5000/food",{
+        const res= await fetch("https://bistroserver.bloperation.com/food",{
             method:"POST",
             headers:{
                 "content-type":"application/json"

@@ -17,7 +17,7 @@ const AddContent = () => {
         const newContent = {
             name: data.name,
             category: data.category,
-            image: data.image || "https://cristianonew.ukrdevs.com/wp-content/uploads/2016/08/product-1-370x247.jpg",
+            image: data.image ||"https://cristianonew.ukrdevs.com/wp-content/uploads/2016/08/product-1-370x247.jpg",
             price: data.price,
             remark: data.remarks
         }
