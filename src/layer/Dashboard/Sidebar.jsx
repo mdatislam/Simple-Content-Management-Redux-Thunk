@@ -15,7 +15,7 @@ const Sidebar = () => {
                     <NavLink className=" text-white font-bold " to="/Dashboard/AddContent">Add Content</NavLink>
                     <NavLink className=" text-white font-bold " to="/Dashboard/ContentList">Content List</NavLink>
                     <div className="divider divider-info mt-24"></div>
-                    <NavLink className=" text-white absolute bottom-24" to="/Home">Back Home</NavLink>
+                    <NavLink className=" text-white absolute bottom-24" to="/">Back Home</NavLink>
 
                 </ul>
             </nav>

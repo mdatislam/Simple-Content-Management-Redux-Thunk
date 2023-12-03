@@ -15,11 +15,11 @@ const Navbar = () => {
         <p className="font-bold text-white text-start ">AdminToggle:
         <button onClick={() => dispatch(sortHistoryContent())}><BiSort className="w-8 h-8 text-teal-700" /> </button>
       </p>
-          <NavLink className=" text-white mr-10 font-bold text-xl" to="/Home">Home</NavLink>
-          <NavLink className=" text-white mr-10 font-bold text-xl" to="/Home/History">History</NavLink>
-          <NavLink className=" text-white mr-10 font-bold text-xl" to="/Home/About">About</NavLink>
+          <NavLink className=" text-white mr-10 font-bold text-xl" to="/">Home</NavLink>
+          <NavLink className=" text-white mr-10 font-bold text-xl" to="/History">History</NavLink>
+          <NavLink className=" text-white mr-10 font-bold text-xl" to="/About">About</NavLink>
           {admin && <NavLink className=" text-white mr-10 font-bold text-xl" to="/Dashboard">Dashboard</NavLink>}
-          <NavLink className=" text-white mr-10 font-bold text-xl" to="/">Login</NavLink>
+          <NavLink className=" text-white mr-10 font-bold text-xl" to="/Login">Login</NavLink>
         </ul>
       </nav>
     </div>

@@ -11,18 +11,18 @@ const Home = () => {
     // console.log(location.pathname);
     //const [foods,setFood]=useState([])
     useEffect(() => {
-
+        console.log("Click in home")
         dispatch(fetchContent())
     }, [dispatch])
 
     const contents = useSelector(state => state.contents.contents)
-    const histories =useSelector(state=> state.contents.history)
-    const concatenatedArray= contents.map(content=>{
-        const matchArray=histories.find(history=>history._id===content._id)
-        return {...content,...(matchArray && {rating:matchArray.rating})}
+    const histories = useSelector(state => state.contents.history)
+    const concatenatedArray = contents.map(content => {
+        const matchArray = histories.find(history => history._id === content._id)
+        return { ...content, ...(matchArray && { rating: matchArray.rating }) }
     })
     //console.log(concatenatedArray);
-    
+
     return (
         <div>
             <div>
@@ -31,12 +31,12 @@ const Home = () => {
             <div className=" grid grid-cols-1 md:grid-cols-3 gap-3 w-max mx-auto px-2">
                 {
                     concatenatedArray
-                    .sort((a,b)=>b.rating-a.rating)
-                    .map(content => (<ContentCard key={content._id}
-                        content={content}
-                        history={history}
+                        .sort((a, b) => b.rating - a.rating)
+                        .map(content => (<ContentCard key={content._id}
+                            content={content}
+                            history={history}
 
-                    />))
+                        />))
                 }
             </div>
         </div>

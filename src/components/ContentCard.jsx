@@ -35,7 +35,7 @@ const ContentCard = ({ content,}) => {
                         <button className="btn btn-primary"
                             onClick={() => {
                                 dispatch(addToHistory(content))
-                                navigate(`/Home/SingleCard/${content._id}`)
+                                navigate(`/SingleCard/${content._id}`)
                             }}
 
                         >Details</button>

@@ -14,11 +14,11 @@ import UpdateContent from "../pages/dashboard/UpdateContent";
 
 export const router = createBrowserRouter([
     {
-      path: "/Home",
+      path: "/",
       element: <Main/>,
       children:[
         {
-            path:"/Home",
+            path:"/",
             element:<Home/>
         },
         {
@@ -62,7 +62,7 @@ export const router = createBrowserRouter([
     ]
     },
     {
-        path:"",
+        path:"/Login",
         element:<Login/>
     },
     {
